@@ -29,7 +29,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class KhmerCurrencyPipe implements PipeTransform {
 
   transform(value: number, case_:string = 'in'): string {
-    const exchangeRate = 4100;
+    const exchangeRate = 4000;
     let riel = value * exchangeRate;
 
     if (case_ === 'in'){
