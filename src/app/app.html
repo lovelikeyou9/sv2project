@@ -1,0 +1,110 @@
+<!-- 1.1
+<div class="container">
+
+    Top Menu
+    <app-top-menu></app-top-menu>
+
+    Main-Slider
+    <app-main-slider></app-main-slider>
+
+    Product Card 
+    <div class="row">
+        <app-product-card class="col-lg-3 col-md-3 col-sm-6 mt-4"></app-product-card>
+        <app-product-card class="col-lg-3 col-md-3 col-sm-6 mt-4"></app-product-card>
+        <app-product-card class="col-lg-3 col-md-3 col-sm-6 mt-4"></app-product-card>
+        <app-product-card class="col-lg-3 col-md-3 col-sm-6 mt-4"></app-product-card>
+
+    </div>
+
+
+</div>
+-->
+
+
+
+<div class="container">
+
+    <!-- Top Menu -->
+    <app-top-menu></app-top-menu>
+
+    <!-- Main-Slider -->
+    <app-main-slider></app-main-slider>
+
+    <!-- Product Card -->
+    <div class="row">
+        @for (product of products; track product.id) {
+            <app-product-card [product]="product" class="col-lg-3 col-md-3 col-sm-6 mt-4"></app-product-card>
+        }
+
+    </div>
+
+
+</div>
+
+
+
+<!-- 2
+@if (show_image) {
+    @for ( i of [1,2,3,4,5]; track i ) {
+        <img src="/slider/3bdd27.jpg" alt="3bdd27.jpg" [ngStyle]="{
+            'height': height + 'px',
+            'width' : width + 'px',
+            'object-fit': 'contain',
+            'border-radius': '50%'
+            }"
+        >
+    }
+}@else{
+    @for ( image of images; track image ) {
+        <img src="/slider/{{ image }}" alt="{{ image }}" [ngStyle]="{
+            'height': height + 'px',
+            'width' : width + 'px',
+            'object-fit': 'contain',
+            'border-radius': '50%'
+            }"
+        >
+    }
+}
+
+<hr>
+<input [disabled]="is_disable" type="button" value="Change Image" class="btn_" (click)="changeImage()">
+
+<input type="button" value="{{ is_disable == true ? 'Enable' : 'Disable' }}" class="btn_" (click)="changeDisable()">
+
+<input [disabled]="is_disable" type="button" value="Add Size" class="btn_" (click)="addSize()">
+
+<input [disabled]="is_disable" type="button" value="Remove Size" class="btn_" (click)="removeSize()">
+
+<input [disabled]="is_disable" type="button" value="toggleImage" class="btn_" (click)="toggleImage()">
+
+-->
+
+
+<!-- 3.1
+<h1>{{ std_name | uppercase }}</h1>
+<h1>{{ std_name | lowercase }}</h1>
+<h1>{{ std_name | titlecase }}</h1>
+<h1>{{ std_dob | date:'fullDate' }}</h1>
+<h1>{{ std_dob | date:'short' }}</h1>
+<h1>{{ std_dob | date:'EEEE, dd/MM/yyyy' }}</h1>
+-->
+
+<!-- 3.2
+<h1>Salary: {{ salary | number:"1.2-2" }}៛</h1>
+<h1>Salary: {{ salary | currency }}</h1>
+<h1>Salary: {{ salary | currency:"KHR":"៛" }}</h1>
+<h1>Salary: {{ 20/100 | percent  }}</h1>
+<h1>Salary: {{ "hello world" | slice:0:5  }}</h1>
+<h1>Salary: {{ [1,2,3,4,5,6,7] | slice:0:5  }}</h1>
+<h1>Json: {{ json_data | json }}</h1>
+<h1>case_ceil: {{ Math.ceil(18965) }}</h1>
+<h1>case_floor: {{ Math.floor(18965) }}</h1>
+<h1>case_in: {{ '18965' | khmerCurrency:"in" }}</h1>
+<h1>case_in: {{ '18965' | khmerCurrency:"out" }}</h1>
+-->
+
+
+
+
+
+<router-outlet />
